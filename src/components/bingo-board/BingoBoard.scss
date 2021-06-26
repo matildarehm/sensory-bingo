@@ -131,6 +131,17 @@ aside h3 {
 
 /* media queries for responsiveness */
 
+@media only screen and  (max-height: 2200px) {
+
+    aside h3 {
+        display: none;
+    }
+
+    .bingo-square {
+        border-radius: 10px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .bingo-board {
         left: 4%;
