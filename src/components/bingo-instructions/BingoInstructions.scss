@@ -1,0 +1,30 @@
+.bingo-instructions {
+  background-color: aliceblue;
+  float: right;
+  right: 5%;
+  top: 20%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .bingo-instructions {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .bingo-instructions {
+    width: 275px;
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .bingo-instructions {
+    width: 200px;
+    top: 40%;
+  }
+
+}
