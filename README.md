@@ -28,7 +28,7 @@ In the project directory, you can run:
 - implement my test cases
 - customize component for the right side of the page + add settings
 
-#### [View web page here](https://60d759c91445a8452795bf53--sensory-minds-bingo.netlify.app/)
+#### [View web page here](https://sensory-minds-bingo.netlify.app/)
 
 ## Deploy your own
 
