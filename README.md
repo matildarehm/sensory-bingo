@@ -26,9 +26,9 @@ In the project directory, you can run:
 - made the UI more responsive + dynamic
 - added a better visual reward than just an alert
 - implement my test cases
-- implement bingo-instructions component for the right side of the page
+- customize component for the right side of the page + add settings
 
-#### [View web page here](https://60d74b9792c6170008421bc4--sensory-minds-bingo.netlify.app/)
+#### [View web page here](https://60d759c91445a8452795bf53--sensory-minds-bingo.netlify.app/)
 
 ## Deploy your own
 
