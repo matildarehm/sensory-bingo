@@ -1,0 +1,192 @@
+$mint: rgba(176, 221, 206, 0.4);
+$soft-white: rgba(255, 255, 255, 0.8);
+$teal: rgb(9, 205, 189);
+$palegreen: rgb(129, 217, 180);
+$orange-soda: rgb(245, 85, 56);
+
+@import url("https://use.typekit.net/cqo6qvi.css");
+
+@font-face {
+    font-family: 'Mont Demo Heavy';
+    src: url("../../assets/fonts/montdemo-heavy.otf") format('opentype');
+}
+
+
+.bingo-board {
+    /* dimensions */
+    height: auto;
+    width: 60%;
+
+    /* position + display */
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 1;
+}
+
+aside {
+    display: block;
+    position: relative;
+    margin: 40px 0;
+}
+
+aside h3 {
+    /* dimensions */
+    width: 74%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /* typeface */
+    font-family: "Mont Demo Heavy", sans-serif;
+    font-size: 12px;
+    letter-spacing: 8px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-align: center;
+
+    /* position + display */
+    top: 100%;
+    right: 25%;
+    margin: 0 0 10px 0;
+    padding: 10px 10px;
+    position: absolute;
+    transform-origin: 0 0;
+    transform: rotate(270deg) translate(-100.5%, 30%);
+
+    /* color + background */
+    color: #fff;
+    backdrop-filter: blur(5px);
+    background-color: $mint;
+}
+
+.bingo-square {
+    /* dimensions */
+    height: 110px;
+    width: 90%;
+    padding: 5%;
+
+    /* position + display */
+    margin: 0;
+    //display: flex;
+    flex: 1 0 auto;
+    position: relative;
+
+    /* color + background */
+    color: $soft-white;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .1);
+
+    h5 {
+        font-family: "Mont Demo Heavy", sans-serif;
+        font-size: 1.1em;
+        display: block;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 0.5em;
+        padding: 5% 0 0;
+        margin: 0;
+    }
+
+    h6 {
+        font-family: korolev-rounded, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 0.9em;
+        text-align: center;
+        display: block;
+        position: relative;
+        white-space: pre-wrap;
+        padding-top: 0;
+        margin-top: 1.5em;
+    }
+
+
+    &:hover {
+        cursor: pointer;
+        background-color: $orange-soda !important;
+        opacity: 0.8;
+        backdrop-filter: blur(2px);
+        transform: scale(1.2);
+        transition: 0.5s ease-in-out;
+        border-radius: 10px;
+        z-index: 2;
+
+    }
+
+}
+
+.active {
+    background-color: $teal !important;
+}
+
+.top-square {
+    border-top-right-radius: 15px;
+}
+
+.bottom-square {
+    border-bottom-right-radius:  15px;
+}
+
+/* media queries for responsiveness */
+
+@media only screen and (max-width: 1024px) {
+    .bingo-board {
+        left: 1%;
+    }
+
+    .bingo-square {
+        height: 100px;
+
+        h5 {
+            font-size: 0.8em;
+        }
+
+        h6 {
+            font-size: 0.75em;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .bingo-board {
+        left: 1%;
+    }
+
+    .bingo-square {
+        height: 80px;
+
+
+        h5 {
+            font-size: 0.8em;
+        }
+
+        h6 {
+            font-size: 0.6em;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .bingo-board {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bingo-square {
+        height: 40px;
+        width: 95%;
+
+
+        h5 {
+            font-size: 0.8em;
+        }
+
+        h6 {
+            font-size: 0.75em;
+        }
+    }
+}

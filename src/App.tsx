@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import Background from './assets/images/abstract-gradient-4.jpg';
 import './App.css';
+import BingoBoard from './components/bingo-board/BingoBoard';
+
+var sectionStyle = {
+    width: "100%",
+    height: "100vh",
+    zIndex: 0,
+    backgroundImage: `url(${ Background })`,
+    backgroundSize: 'cover'
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="bingo-main" style={ sectionStyle }>
+        <article className="board">
+            <BingoBoard/>
+        </article>
+    </section>
   );
 }
 

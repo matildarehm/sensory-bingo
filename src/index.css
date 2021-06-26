@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MuiGrid-grid-xs-2 {
+  margin: 0.5% !important;
+}
