@@ -1,5 +1,6 @@
 # **SENSORY MINDS**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8f5b268d-bcf4-4260-a0fe-0044e0bc3697/deploy-status)](https://app.netlify.com/sites/sensory-minds-bingo/deploys)
 
 ## Coding Challenge
 ### sensory bingo
@@ -26,3 +27,11 @@ In the project directory, you can run:
 - added a better visual reward than just an alert
 - implement my test cases
 - implement bingo-instructions component for the right side of the page
+
+#### [View web page here](https://60d74b9792c6170008421bc4--sensory-minds-bingo.netlify.app/)
+
+## Deploy your own
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/matildarehm/sensory-bingo)
+
+(Click this button and it will clone the repo to your chosen Git provider, and instantly deploy to Netlify)
