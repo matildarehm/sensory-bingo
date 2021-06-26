@@ -11,4 +11,20 @@ describe('<BingoBoard />', () => {
     expect(bingoBoard).toBeInTheDocument();
 
   });
+
+  /* test activeness of bingo square */
+
+  /* make sure middle square is ALWAYS in the matrix */
+
+  /* test left diagona bingo */
+
+  /* test right diagonal bingo */
+
+  /* test horizontal bingo */
+
+  /* test vertical bingo */
+
+  /* test for multiple bingos */
+
+  /* visual reward test */
 });
