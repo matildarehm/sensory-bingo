@@ -9,7 +9,6 @@ import { selectRow } from './BingoBoard.utils'
 // external libraries
 import classNames from 'classnames';
 import Grid from '@material-ui/core/Grid';
-const { Howl, Howler } = require('howler');
 
 function BingoRow(props: any) {
     const bingoTop = classNames('bingo-square', 'top-square');
@@ -21,17 +20,15 @@ function BingoRow(props: any) {
                   if (props.row === "R1" && value === 4) {
                      return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={bingoTop} id={ squareName.toLowerCase() } onClick={ () => {
-                              let row : string = props.row;
                               props.boardState(selectRow(props.row, (value + 1), props.currentBoard))}}>
                               <h5>{ squareName }</h5>
                               <h6>{ props.details[value] }</h6>
                           </div>
                       </Grid>
                   }
-                  else if (props.row === "R5" && value == 4) {
+                  else if (props.row === "R5" && value === 4) {
                       return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={bingoBottom} id={ squareName.toLowerCase() } onClick={ () => {
-                              let row : string = props.row;
                               props.boardState(selectRow(props.row, (value + 1), props.currentBoard))}}>
                               <h5>{ squareName }</h5>
                               <h6>{ props.details[value] }</h6>
@@ -41,7 +38,6 @@ function BingoRow(props: any) {
                   else {
                       return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={"bingo-square"} id={ squareName.toLowerCase() } onClick={ () => {
-                              let row : string = props.row;
                               props.boardState(selectRow(props.row, (value + 1), props.currentBoard))}}
                                style= {{ backgroundColor: squareName.toLowerCase() === "r3s3" ? props.currentBoard.active : props.currentBoard.inactive }}>
                               <h5>{ squareName }</h5>

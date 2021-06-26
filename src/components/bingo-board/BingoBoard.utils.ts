@@ -1,6 +1,4 @@
 export const selectRow: any = (row: string, square: number, currentBoard: any) => {
-    console.log(String(row), String(square));
-    console.log(currentBoard);
 
     let rowSet = currentBoard[row];
     if (rowSet.has(square)) {
@@ -11,11 +9,12 @@ export const selectRow: any = (row: string, square: number, currentBoard: any) =
         setActiveColor(row + "S" + square, true, currentBoard);
     }
 
-    console.log(currentBoard)
-
-
     checkForWin(row, square, currentBoard);
     return currentBoard;
+}
+
+const verticalBingoSet = (row1: any, row2: any) => {
+    return new Set([...row1].filter((x: any) => row2?.has(x)));
 }
 
 const checkForWin = (row : string, square: number, rowMatrix: any) => {
@@ -29,12 +28,10 @@ const checkForWin = (row : string, square: number, rowMatrix: any) => {
     if (rowMatrix[row].size === 5) { bingoWins.push(SAME_ROW); }
 
     /* if same # square in all rows (vertical) */
-    let sameSquare = true;
     // @ts-ignore
     let currSet : Set  = new Set([...rowMatrix["R1"]].filter(x => rowMatrix["R2"].has(x)));
     for ( let x = 2; x < 5; x++ ) {
-        console.log("R" + (x+1), currSet);
-        currSet =  new Set([...rowMatrix["R" + (x+1)]].filter((x: any) => currSet?.has(x)));
+        currSet =   verticalBingoSet(rowMatrix["R" + (x+1)], currSet);
     }
     if (currSet.size >= 1) { bingoWins.push(SAME_COLUMN); }
 
