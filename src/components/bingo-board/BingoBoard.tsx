@@ -8,7 +8,6 @@ import { selectRow, onEvent } from './BingoBoard.utils';
 import WinModal from '../win-modal/WinModal';
 
 // external libraries
-import $ from "jquery";
 import classNames from 'classnames';
 import Grid from '@material-ui/core/Grid';
 

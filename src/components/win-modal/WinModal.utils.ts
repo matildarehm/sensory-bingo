@@ -14,8 +14,6 @@ export default function shuffled() {
 
     for(let i = 0; i < size; i++) {
         var t = Math.floor(i / column);
-        let rightIndex = (5 - t);
-        let leftIndex = (t + 1);
 
         // @ts-ignore
         let currRow = clone.splice(Math.floor(Math.random() * clone.length), 1)[0];

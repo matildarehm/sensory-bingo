@@ -221,7 +221,6 @@ const setActiveColor = (name: string, active : boolean,  board: any)  => {
 }
 
 export function onEvent(board: any) {
-    let currentState = getCurrentMatrix(board);
     let $shuffled = false ;
     $(".shuffle").click(function(event){
         event.preventDefault();
