@@ -57,14 +57,6 @@ function BingoRow(props: any) {
     );
 }
 
-const checkActiveStates = () => {
-    const bingoState = document.getElementById("bingo-options");
-    if (bingoState != null) {
-        return !bingoState.classList.contains("inactive");
-    }
-    return false;
-}
-
 export default function BingoBoard(this: any) {
     let middleSquare = new Set();
     middleSquare.add(3);

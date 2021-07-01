@@ -3,7 +3,6 @@ import click  from '../../assets/sounds/click-sound.wav';
 import win  from '../../assets/sounds/winning-sounds.wav';
 
 export const selectRow: any = (row: string, square: number, currentBoard: any) => {
-    console.log(currentBoard);
     let audio = new Audio(click);
     audio.play()
 
@@ -15,8 +14,6 @@ export const selectRow: any = (row: string, square: number, currentBoard: any) =
         rowSet.add(square);
         setActiveColor(row + "S" + square, true, currentBoard);
     }
-
-    console.log("last check for win!", checkForWin(row, square, currentBoard));
 
     currentBoard["bingoWins"] = checkForWin(row, square, currentBoard);
     currentBoard["winState"] = currentBoard["bingoWins"].length > 0 ? true : false;
@@ -39,16 +36,13 @@ function countInArray(arr: string | any[], item: any) {
 
 const checkBingo = (matrix: any, wins: []) => {
     let revisedWins: any[] = [];
-    console.log("in check bingo", matrix, wins);
     wins.map((w) => {
 
         if (matrix.length === 0 ) { revisedWins.push(w); }
         else if (!matrix.includes(w)) { revisedWins.push(w); }
-
         if (countInArray(matrix, w) < countInArray(wins, w)) { revisedWins.push(w); }
-
+        return "";
     });
-    console.log(revisedWins);
 
     return revisedWins;
 }
@@ -115,7 +109,6 @@ function announceWin (bingoWins: any[]) {
             bingoOptions.classList.remove("inactive");
         }
     }
-
     return [];
 }
 
