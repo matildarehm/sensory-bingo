@@ -17,7 +17,7 @@ In the project directory, you can run:
 - [x]  The game **must** always fit nicely to any screen-size (e.g. mobile).
 - [x]  **Design your own version** – our game is an example. Be creative and pick your own design!
 - [x]  Having a bingo requires some **nice visual reward**. You don't need to use confetti – choose something you believe fits best.
-- [ ]  Think of multiple gamers playing the Bingo together.. ensure that winning the game is possible and fair. (hint: if every player has the same card, everybody would win)
+- [x]  Think of multiple gamers playing the Bingo together.. ensure that winning the game is possible and fair. (hint: if every player has the same card, everybody would win)
 - [x]  **Add something new.** Come up with something you would enjoy while playing the game.
 
 
@@ -31,8 +31,8 @@ In the project directory, you can run:
 ## circling back
 - [x] visual reward
 - [x] bingo bug fix
-- [ ] shuffle (1/2 complete)
-- [ ] adjust responsiveness
+- [x] shuffle (1/2 complete)
+- [x] adjust responsiveness
 
 #### [View web page here](https://sensory-minds-bingo.netlify.app/)
 
