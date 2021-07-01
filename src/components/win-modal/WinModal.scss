@@ -40,7 +40,7 @@
 .win-choose {
   width: 60%;
   height: 20%;
-  left: 60%;
+  left: 55%;
   top: 25%;
   transform: translateX(-50%);
   position: absolute;
@@ -61,3 +61,39 @@
   font-size: 18px !important;
 }
 
+@media only screen and (max-width: 1024px) {
+  .win-option {
+    padding-top: 0px;
+    &:hover {
+      /* animation */
+      cursor: pointer;
+      --webkit-animation: none;
+      animation: none;
+    }
+  }
+
+  .win-choose {
+    top: 30%;
+    left: 55%;
+  }
+
+  .play-option {
+    vertical-align: bottom;
+    font-size: 12px !important;
+  }
+  .play-icon {
+    font-size: 12px !important;
+    vertical-align: top;
+    margin-bottom: 0.6em;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .win-choose {
+    top: 35%;
+    left: 55%;
+  }
+  .bingo-announcement { top: 30%; }
+  canvas { display: none; }
+}

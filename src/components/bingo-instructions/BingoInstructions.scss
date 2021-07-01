@@ -1,8 +1,10 @@
 .bingo-instructions {
+  /* color + background */
   color: white;
   background-color: rgba(226, 102, 184, .8);
   box-shadow: 0 15px 25px rgba(226, 102, 184, .6);
 
+  /* position + display */
   float: right;
   right: 5%;
   top: 20%;
@@ -10,6 +12,7 @@
   position: absolute;
   border-radius: 8px;
 
+  /* typeface */
   font-family: korolev-rounded, sans-serif;
 }
 
@@ -19,9 +22,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .bingo-instructions {
-    display: none;
-  }
+  .bingo-instructions { display: none; }
 }
 
 @media only screen and (max-width: 1024px) {

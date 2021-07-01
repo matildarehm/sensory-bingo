@@ -34,6 +34,7 @@ html, body {
 }
 
 aside {
+    /* position + display */
     display: block;
     position: relative;
     margin: 40px 0;
@@ -76,7 +77,6 @@ aside h3 {
 
     /* position + display */
     margin: 0;
-    //display: flex;
     flex: 1 0 auto;
     position: relative;
 
@@ -124,36 +124,19 @@ aside h3 {
 
 }
 
-.top-square {
-    border-top-right-radius: 15px;
-}
-
-.bottom-square {
-    border-bottom-right-radius:  15px;
-}
-
-.active {
-    display: block;
-}
-
-.inactive {
-    display: none;
-}
+.active { display: block; }
+.inactive { display: none; }
 
 /* animations */
+// NOT IN USE
 @keyframes bingoWin {
     0%  {
-
         background-color: rgba(217, 3, 104, 0.3) !important;
-        //transition: 0.8s ease-in-out;
     }
     100% {
         color: #55b6f6;
-
         background-color: rgba(217, 3, 104, 0.8) !important;
-        //transition: 0.8s ease-in-out;
     }
-
 }
 
 .bingo-announcement {
@@ -162,16 +145,16 @@ aside h3 {
     text-transform: uppercase;
     font-family: "Mont Demo Heavy", sans-serif;
     text-align: center !important;
+
+    /* color + background */
     color: #e266b8;
 
-    /* position */
-    position: absolute;
-    z-index: 100;
-
+    /* position + display */
     left: 50%;
     top: 16%;
-
     transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 100;
 
     /*  animation */
     animation: pulse 2s infinite;
@@ -199,19 +182,12 @@ aside h3 {
 
 @media only screen and  (max-height: 2200px) {
 
-    aside h3 {
-        display: none;
-    }
-
-    .bingo-square {
-        border-radius: 8px;
-    }
+    aside h3 { display: none; }
+    .bingo-square { border-radius: 8px; }
 }
 
 @media only screen and (max-width: 1024px) {
-    .bingo-board {
-        left: 4%;
-    }
+    .bingo-board { left: 4%; }
 
     aside h3 {
         width: 90%;
@@ -223,13 +199,8 @@ aside h3 {
     .bingo-square {
         height: 100px;
 
-        h5 {
-            font-size: 0.8em;
-        }
-
-        h6 {
-            font-size: 0.75em;
-        }
+        h5 { font-size: 0.8em; }
+        h6 { font-size: 0.75em; }
     }
 }
 
@@ -248,15 +219,8 @@ aside h3 {
 
     .bingo-square {
         height: 80px;
-
-
-        h5 {
-            font-size: 0.8em;
-        }
-
-        h6 {
-            font-size: 0.6em;
-        }
+        h5 { font-size: 0.8em; }
+        h6 { font-size: 0.6em; }
     }
 }
 
@@ -269,9 +233,7 @@ aside h3 {
         zoom: 58%;
     }
 
-    aside h3 {
-       display: none;
-    }
+    aside h3 { display: none; }
 
     .bingo-square {
         height: 90%;
@@ -283,8 +245,6 @@ aside h3 {
             display: none;
         }
 
-        h6 {
-            font-size: 1.2em;
-        }
+        h6 { font-size: 1.2em; }
     }
 }

@@ -1,3 +1,4 @@
+// project components + assets
 import { Confetti } from './confetti';
 
 export function runBingoAnimation() {
@@ -8,7 +9,7 @@ export function runBingoAnimation() {
 
     /* find and set window frame size */
     const resizeWindow = () => {
-        context.canvas.width = window.innerWidth;
+        context.canvas.width = window.outerWidth;
         return context.canvas.height = window.innerHeight;
     };
 

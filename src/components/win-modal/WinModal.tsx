@@ -9,20 +9,22 @@ import $ from "jquery";
 import RepeatIcon from '@material-ui/icons/Repeat';
 import ReplayIcon from '@material-ui/icons/Replay';
 
+function playAudio(uri: string) {
+    new Audio(uri).play();
+}
+
 function playAgain() {
     $("#announce-bingo").addClass('inactive');
     $("#bingo-options").addClass('inactive');
     $("#bingo-win").addClass('inactive');
-    let audio = new Audio(unlock);
-    audio.play()
+    playAudio(unlock);
 };
 
 function shuffleBoard() {
     $("#announce-bingo").addClass('inactive');
     $("#bingo-options").addClass('inactive');
     $("#bingo-win").addClass('inactive');
-    let audio = new Audio(shuffle);
-    audio.play()
+    playAudio(shuffle);
     shuffled();
 };
 
@@ -35,7 +37,7 @@ export default function WinModal() {
                 flexWrap: 'wrap',
             }} onClick={ () => { playAgain() }}>
                 <ReplayIcon className={"play-icon"}/>
-                <h3 className={"play-option"}>Play again</h3>
+                <h3 className={"play-option"}>Continue Playing</h3>
             </button>
             <button className={"shuffle win-option"} style={{
                 display: 'flex',

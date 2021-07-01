@@ -4,10 +4,11 @@ import React from 'react';
 // project components + assets
 import './BingoBoard.scss';
 import { ConferenceDetails } from '../conference/conference.enum';
-import { selectRow } from './BingoBoard.utils';
+import { selectRow, onEvent } from './BingoBoard.utils';
 import WinModal from '../win-modal/WinModal';
 
 // external libraries
+import $ from "jquery";
 import classNames from 'classnames';
 import Grid from '@material-ui/core/Grid';
 
@@ -22,7 +23,7 @@ function BingoRow(props: any) {
                   if (props.row === "R1" && value === 4) {
                      return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={bingoTop} id={ squareName.toLowerCase() } onClick={ () => {
-                              props.boardState(selectRow(props.row, (value + 1), props.currentBoard));
+                              props.boardState(selectRow(props.row, squareName.toLowerCase(), props.currentBoard));
                           }}>
                               <h5>{ squareName }</h5>
                               <h6>{ props.details[value] }</h6>
@@ -30,11 +31,9 @@ function BingoRow(props: any) {
                       </Grid>
                   }
                   else if (props.row === "R5" && value === 4) {
-
-                      // @ts-ignore
                       return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={bingoBottom} id={ squareName.toLowerCase() } onClick={ () => {
-                              props.boardState(selectRow(props.row, (value + 1), props.currentBoard));
+                              props.boardState(selectRow(props.row, squareName.toLowerCase(), props.currentBoard));
                           }}>
                               <h5>{ squareName }</h5>
                               <h6>{ props.details[value] }</h6>
@@ -44,8 +43,8 @@ function BingoRow(props: any) {
                   else {
                       return <Grid  key={"S" + (value + 1)}  item xs={2}>
                           <div className={"bingo-square"} id={ squareName.toLowerCase() } onClick={ () => {
-                              props.boardState(selectRow(props.row, (value + 1), props.currentBoard));
-                          }} style={{ backgroundColor: squareName.toLowerCase() === "r3s3" ? props.currentBoard.active : props.currentBoard.inactive }}>
+                              props.boardState(selectRow(props.row, squareName.toLowerCase(), props.currentBoard));
+                          }}>
                               <h5>{ squareName }</h5>
                               <h6>{ props.details[value] }</h6>
                           </div>
@@ -59,9 +58,9 @@ function BingoRow(props: any) {
 
 export default function BingoBoard(this: any) {
     let middleSquare = new Set();
-    middleSquare.add(3);
+    middleSquare.add("r3s3");
 
-    const [boardMatrix, setBoard] = React.useState({
+    let [boardMatrix, setBoard] = React.useState({
         "R1": new Set(),
         "R2": new Set(),
         "R3": middleSquare,
@@ -70,18 +69,23 @@ export default function BingoBoard(this: any) {
         "active": "rgba(87, 165, 248, 0.7)",
         "inactive": "rgba(255, 255, 255, .1)",
         "bingoWins": [],
-        "winState": false
+        "winState": false,
+        "middleSquare": "r3s3"
     });
 
     const stateRef: any = React.useRef();
     stateRef.current = boardMatrix;
+
+    React.useEffect(() => {
+        window.addEventListener('click', (event) => { onEvent(stateRef.current) });
+    });
 
     return (
         <section className={"bingo-board"}>
             <canvas id={"bingo-win"}></canvas>
             <h1 id={"announce-bingo"} className={"bingo-announcement inactive"}>Bingo</h1>
             <div id={"bingo-options"} className={"inactive"}>
-                <WinModal ></WinModal>
+                <WinModal></WinModal>
             </div>
             <Grid container>
                 <Grid item xs={12} id={"grid-container"}>
