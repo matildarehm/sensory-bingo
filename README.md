@@ -2,7 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8f5b268d-bcf4-4260-a0fe-0044e0bc3697/deploy-status)](https://app.netlify.com/sites/sensory-minds-bingo/deploys)
 
-## Coding Challenge
 ### sensory bingo
 
 ### `rules`
