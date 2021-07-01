@@ -3,6 +3,7 @@ $soft-white: rgba(255, 255, 255, 0.8);
 $teal: rgb(9, 205, 189);
 $palegreen: rgb(129, 217, 180);
 $orange-soda: rgb(245, 85, 56);
+$purple-soda: rgba(145,124,236,0.65);
 
 @import url("https://use.typekit.net/cqo6qvi.css");
 
@@ -11,6 +12,13 @@ $orange-soda: rgb(245, 85, 56);
     src: url("../../assets/fonts/montdemo-heavy.otf") format('opentype');
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 .bingo-board {
     /* dimensions */
@@ -19,7 +27,7 @@ $orange-soda: rgb(245, 85, 56);
 
     /* position + display */
     top: 50%;
-    left: 2%;
+    left: 0%;
     transform: translateY(-50%);
     position: absolute;
     z-index: 1;
@@ -75,7 +83,7 @@ aside h3 {
     /* color + background */
     color: $soft-white;
     backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(255, 255, 255, .2);
 
     h5 {
         font-family: "Mont Demo Heavy", sans-serif;
@@ -105,20 +113,15 @@ aside h3 {
 
     &:hover {
         cursor: pointer;
-        background-color: $orange-soda !important;
-        opacity: 0.8;
+        background-color: $purple-soda !important;
+        opacity: 0.7;
         backdrop-filter: blur(2px);
-        transform: scale(1.2);
-        transition: 0.5s ease-in-out;
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out;
         border-radius: 10px;
         z-index: 2;
-
     }
 
-}
-
-.active {
-    background-color: $teal !important;
 }
 
 .top-square {
@@ -127,6 +130,69 @@ aside h3 {
 
 .bottom-square {
     border-bottom-right-radius:  15px;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+
+/* animations */
+@keyframes bingoWin {
+    0%  {
+
+        background-color: rgba(217, 3, 104, 0.3) !important;
+        //transition: 0.8s ease-in-out;
+    }
+    100% {
+        color: #55b6f6;
+
+        background-color: rgba(217, 3, 104, 0.8) !important;
+        //transition: 0.8s ease-in-out;
+    }
+
+}
+
+.bingo-announcement {
+    /* typeface */
+    font-size: 10em;
+    text-transform: uppercase;
+    font-family: "Mont Demo Heavy", sans-serif;
+    text-align: center !important;
+    color: #e266b8;
+
+    /* position */
+    position: absolute;
+    z-index: 100;
+
+    left: 50%;
+    top: 16%;
+
+    transform: translate(-50%, -50%);
+
+    /*  animation */
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 rgba(226, 102, 184, 1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.95);
+        text-shadow: 0 0 rgba(226, 102, 184, 0.7);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1);
+        text-shadow: 10px 10px rgba(226, 102, 184, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.95);
+        text-shadow: 0 0 rgba(226, 102, 184, 0);
+    }
 }
 
 /* media queries for responsiveness */
@@ -138,7 +204,7 @@ aside h3 {
     }
 
     .bingo-square {
-        border-radius: 10px;
+        border-radius: 8px;
     }
 }
 

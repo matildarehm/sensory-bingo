@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -13,10 +14,12 @@
     "@types/react-dom": "^17.0.8",
     "classnames": "^2.3.1",
     "howler": "^2.2.1",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-audio-player": "^0.17.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "shufflejs": "^5.4.1",
     "typescript": "^4.3.4",
     "use-sound": "^4.0.0",
     "web-vitals": "^1.1.2"
@@ -47,6 +50,7 @@
   },
   "devDependencies": {
     "@types/howler": "^2.2.2",
+    "@types/jquery": "^3.5.5",
     "node-sass": "^6.0.0"
   }
 }

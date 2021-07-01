@@ -1,11 +1,21 @@
 .bingo-instructions {
-  background-color: aliceblue;
+  color: white;
+  background-color: rgba(226, 102, 184, .8);
+  box-shadow: 0 15px 25px rgba(226, 102, 184, .6);
+
   float: right;
   right: 5%;
   top: 20%;
   padding: 20px;
   position: absolute;
   border-radius: 8px;
+
+  font-family: korolev-rounded, sans-serif;
+}
+
+.how-to {
+  font-family: "Mont Demo Heavy", sans-serif;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {

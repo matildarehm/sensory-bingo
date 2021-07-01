@@ -1,5 +1,4 @@
 import React from 'react';
-import Background from './assets/images/abstract-gradient-4.jpg';
 import './App.css';
 import BingoBoard from './components/bingo-board/BingoBoard';
 import BingoInstructions from './components/bingo-instructions/BingoInstructions';
@@ -9,7 +8,6 @@ var sectionStyle = {
     width: "100%",
     height: "100vh",
     zIndex: 0,
-    backgroundImage: `url(${ Background })`,
     backgroundSize: 'cover'
 };
 
