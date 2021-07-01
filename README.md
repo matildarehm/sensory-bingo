@@ -4,8 +4,8 @@
 
 ### Video Conference Bingo
 
-#### [Final - Deployed Sensory Bingo](https://sensory-minds-bingo.netlify.app/)
-#### [Iteration 1 - Deployed Sensory Bingo](https://60d78a42f6ac6800070f40e2--sensory-minds-bingo.netlify.app/)
+[Final - Deployed Sensory Bingo](https://sensory-minds-bingo.netlify.app/)
+[Iteration 1 - Deployed Sensory Bingo](https://60d78a42f6ac6800070f40e2--sensory-minds-bingo.netlify.app/)
 
 ### `rules`
 -  A player wins by completing a row, column, or diagonal.
