@@ -37,6 +37,7 @@ export const selectRow: any = (row: string, squareName: string, currentBoard: an
 
     const currentMatrix = getCurrentMatrix(currentBoard);
     currentBoard = checkShuffle(currentBoard)
+    console.log(currentBoard);
 
     let rowSet = currentBoard[row];
     if (rowSet.has(squareName)) {
@@ -118,10 +119,6 @@ const  getCurrentMatrix = (board: any) => {
 }
 
 // basic utilities
-const isEqual = (arr1: any[], arr2: string | any[]) => {
-    return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index])
-}
-
 function countInArray(arr: string | any[], item: any) {
     var count = 0;
     for (var i = 0; i < arr.length; i++) {
@@ -138,18 +135,6 @@ const checkBingo = (matrix: any, wins: []) => {
         if (countInArray(matrix, w) < countInArray(wins, w)) { revisedWins.push(w); }
     });
     return revisedWins;
-}
-
-/* checks that row array are exactly the same as winning row */
-const checkRow = (matrix: any, winningRow: []) => {
-    const allRows = ["R1", "R2", "R3", "R4", "R5"]
-    let rowWins = 0;
-    allRows.forEach(row => {
-        let currRow = Array.from(matrix[row]);
-        if (row === "R3") { currRow.sort() }
-        if (isEqual(currRow, winningRow)) { rowWins++ }
-    });
-    return rowWins;
 }
 
 /* checks that all elements in winning array are located in current grid */
@@ -173,8 +158,7 @@ const checkForWin = (gridMatrix: any, rowMatrix: any) => {
 
     /* check if row matches any of the expected rows in the grid Matrix */
     gridMatrix[0].forEach((hRow: []) => {
-        let allWins = checkRow(rowMatrix, hRow);
-        for (let x = 0; x < allWins; x++) { bingoWins.push(SAME_ROW); }
+        if (checkArr(rowMatrix, hRow) === true) { bingoWins.push(SAME_ROW); }
     });
 
     /* check if cols matches any of the expected cols in the grid Matrix */
