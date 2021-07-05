@@ -40,11 +40,11 @@ export const selectRow: any = (row: string, squareName: string, currentBoard: an
     console.log(currentBoard);
 
     let rowSet = currentBoard[row];
-    if (rowSet.has(squareName) && squareName != currentMatrix[4]["middleSquare"]) {
+    if (rowSet.has(squareName) && squareName !== currentMatrix[4]["middleSquare"]) {
         rowSet.delete(squareName);
         setActiveColor(squareName, false, currentBoard);
     } else {
-        if (squareName != currentMatrix[4]["middleSquare"]) {
+        if (squareName !== currentMatrix[4]["middleSquare"]) {
             rowSet.add(squareName);
             setActiveColor(squareName, true, currentBoard);
         }
