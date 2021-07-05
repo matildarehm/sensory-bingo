@@ -40,12 +40,15 @@ export const selectRow: any = (row: string, squareName: string, currentBoard: an
     console.log(currentBoard);
 
     let rowSet = currentBoard[row];
-    if (rowSet.has(squareName)) {
+    if (rowSet.has(squareName) && squareName != currentMatrix[4]["middleSquare"]) {
         rowSet.delete(squareName);
         setActiveColor(squareName, false, currentBoard);
     } else {
-        rowSet.add(squareName);
-        setActiveColor(squareName, true, currentBoard);
+        if (squareName != currentMatrix[4]["middleSquare"]) {
+            console.log(squareName);
+            rowSet.add(squareName);
+            setActiveColor(squareName, true, currentBoard);
+        }
     }
 
     currentBoard["bingoWins"] = checkForWin(currentMatrix, currentBoard);
