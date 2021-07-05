@@ -45,7 +45,6 @@ export const selectRow: any = (row: string, squareName: string, currentBoard: an
         setActiveColor(squareName, false, currentBoard);
     } else {
         if (squareName != currentMatrix[4]["middleSquare"]) {
-            console.log(squareName);
             rowSet.add(squareName);
             setActiveColor(squareName, true, currentBoard);
         }
