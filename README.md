@@ -8,7 +8,7 @@
 
 [Iteration 1 - Deployed Sensory Bingo](https://60d78a42f6ac6800070f40e2--sensory-minds-bingo.netlify.app/)
 
-### `rules`
+### `Rules`
 -  A player wins by completing a row, column, or diagonal.
 - There's a free slot (always on) in the middle
 -  You can have multiple bingos
@@ -16,7 +16,7 @@
 
 In the project directory, you can run:
 
-### `task`
+### `Task`
 - [x]  The game **must** always fit nicely to any screen-size (e.g. mobile).
 - [x]  **Design your own version** – our game is an example. Be creative and pick your own design!
 - [x]  Having a bingo requires some **nice visual reward**. You don't need to use confetti – choose something you believe fits best.
